@@ -1,0 +1,41 @@
+// menu button style
+
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    top: 35px;
+    right: 35px;
+    cursor: pointer;
+    @include easeOut;
+    
+    
+    .btn-line{
+        width: 25px;
+        height: 2px;
+        margin: 0 0 5px 0;
+        background: #ffffffff;
+        @include easeIn;
+    }
+    
+    &.close {
+        transform: rotate(180deg);
+        .btn-line {
+            background-color: rgb(57, 245, 141);
+            &:nth-child(1){
+            transform: rotate(45deg) translate(9px, 4px);
+            }
+            &:nth-child(2){
+                transform: rotate(90deg);
+                margin-left: 30px;
+                height: 5px;
+                background-color: rgb(235, 231, 34);
+            }
+            &:nth-child(3){
+                transform: rotate(-45deg) translate(8px, -3px);
+            }
+
+
+        }
+        
+    }
+}

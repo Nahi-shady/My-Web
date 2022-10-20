@@ -1,3 +1,30 @@
+.menu-btn {
+  position: absolute;
+  z-index: 3;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  transition: all 0.6s ease-out; }
+  .menu-btn .btn-line {
+    width: 25px;
+    height: 2px;
+    margin: 0 0 5px 0;
+    background: #ffffffff;
+    transition: all 0.6s ease-in; }
+  .menu-btn.close {
+    transform: rotate(180deg); }
+    .menu-btn.close .btn-line {
+      background-color: #39f58d; }
+      .menu-btn.close .btn-line:nth-child(1) {
+        transform: rotate(45deg) translate(9px, 4px); }
+      .menu-btn.close .btn-line:nth-child(2) {
+        transform: rotate(90deg);
+        margin-left: 30px;
+        height: 5px;
+        background-color: #ebe722; }
+      .menu-btn.close .btn-line:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -3px); }
+
 * {
   box-sizing: border-box; }
 
