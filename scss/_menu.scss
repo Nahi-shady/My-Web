@@ -26,7 +26,8 @@
             }
             &:nth-child(2){
                 transform: rotate(90deg);
-                margin-left: 30px;
+                margin-left: 25px;
+                border-radius: 20px;
                 height: 5px;
                 background-color: rgb(235, 231, 34);
             }
@@ -37,5 +38,102 @@
 
         }
         
+    }
+}
+
+// menu overlay
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+    
+    &.show {
+        visibility: visible;
+
+    }
+    &-branding,
+    &-nav {
+        overflow: hidden;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        float: left;
+        width: 50%;
+        height: 100vh;
+    }
+    &-nav {
+        opacity: 0.9;
+        margin: 0;
+        padding: 0;
+        background: darken($primary-color, 20);
+        list-style: none;
+        transform: translate3d(0, -100%, 0);
+        @include easeOut;
+
+        &.show {
+           transform: translate3d(0, 0, 0);
+        }
+    }
+    
+    &-branding {
+        opacity: 1;
+        background: darken($primary-color, 20);
+        transform: translate3d(0, 100%, 0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .portrait {
+            width: 250px;
+            height: 250px;
+            background: $menu-image;
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+            border: solid 3px lavender;
+            box-shadow: 0 0 40px 1px rgb(5, 255, 255);
+        }
+    }
+    .nav-item {
+        transform: translate3d(0, 600px, 0);
+        @include easeOut;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+        &.current > a {
+            color: $secondary-color;
+        }
+    }
+    .nav-link {
+        display: inline-block;
+        color: white;
+        position: relative;
+        text-decoration: none;
+        margin-bottom: 3px;
+        padding: 0;
+        font-size: 25px;
+        font-weight: 600;
+        text-transform: uppercase;
+        @include easeIn;
+
+        &:hover {
+            color: rgb(47, 233, 233);
+            margin-left: 13px;
+        } 
+    }
+}
+
+
+
+// time delay for nav-item slide in animation
+@for $x from 1 through 4 {
+    .nav-item:nth-child(#{$x}){
+        transition-delay: $x * 0.1s;
     }
 }
