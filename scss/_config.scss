@@ -4,6 +4,7 @@ $text-color: rgb(231, 231, 231);
 $show-home-image: true;
 $home-image: url(../img/bg.jpg);
 $menu-image: url(../img/pp.jpg);
+$small-menu-image: url(../img/pps.jpg);
 $background-opacity: 0.7;
 
 
@@ -33,5 +34,28 @@ $background-opacity: 0.7;
                 background: rgba($primary-color, $background-opacity);
             }
         } 
+    }
+}
+
+
+// media queries for different screen sizes
+@mixin mediaSm {
+    @media screen and (max-width: 600px) {
+        @content;
+    }
+}
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+@mixin mediaLg {
+    @media screen and (min-width:769px) and (max-width: 1100px) {
+        @content;
+    }
+}
+@mixin mediaXl {
+    @media screen and (min-width: 1101px) {
+        @content;
     }
 }
