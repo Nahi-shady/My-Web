@@ -1,6 +1,6 @@
 @import "config";
 @import "menu";
-@import "media";
+
 
 
 * {
@@ -15,11 +15,11 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    overflow: hidden;
+    //overflow: hidden;
 }
 
 // headings
-h1, h2, h3 {
+h1, h2, h3, h4 {
     margin: 0;
     font-weight: 400;
     &.lg-heading{
@@ -49,7 +49,7 @@ header {
 
 main {
     padding: 4rem;
-    height: 100%;
+    min-height: calc(100vh - 60px);
     .icons {
         margin-top: 1rem;
         a {
@@ -66,14 +66,90 @@ main {
             margin-top: 20vh;
         }
     }
+    .line{
+        float: left;
+        width: 150px;
+        height: 2px;
+        border-radius: 49px;
+        margin: 0 ;
+        background-color: rgb(20, 173, 220);
+    }    
+}
+
+// about page
+.about-info {
+    display: grid;
+    gap: 15px;
+    grid-template-areas:
+    'bio-image bio bio'
+    'job-1 job-2 job-3';
+    grid-template-columns: repeat(3, 1fr);
+    p {
+        margin-top: 5px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+      }
+    .bio-image {
+        grid-area: bio-image;
+        margin: auto;
+        border-radius: 10%;
+        border: solid 2px lavender;
+        box-shadow: 0 0 10px 1px #05ffff;
+    }
+
+    .bio {
+        grid-area: bio;
+        border-radius: 3%;
+        padding: 20px 9px 9px 20px;
+        font-size: 1.2rem;
+        border: solid 2px lavender;
+        box-shadow: 0 0 5px 1px #05ffff;
+    }
+
+    .job-1 {
+        grid-area: job-1;
+        padding: 10px 9px 9px 15px;
+        background-color: rgb(51, 50, 50);
+        font-size: 1.2rem;
+        border-radius: 9px;
+        border-left: solid 3px $secondary-color;
+        border-bottom: solid 6px $secondary-color;
+    }
+    .job-2 {
+        grid-area: job-2;
+        padding: 10px 9px 9px 15px;
+        background-color: rgb(51, 50, 50);
+        font-size: 1.2rem;
+        border-radius: 9px;
+        border-left: solid 3px $secondary-color;
+        border-bottom: solid 6px $secondary-color;
+        
+    }
+    .job-3 {
+        grid-area: job-3;
+        padding: 10px 9px 9px 15px;
+        background-color: rgb(51, 50, 50);
+        font-size: 1.2rem;
+        border-radius: 9px;
+        border-left: solid 3px $secondary-color;
+        border-bottom: solid 6px $secondary-color;
+        
+    }
+}
+
+// footer 
+footer {
+    text-align: center;
+    background-color: black;
+    padding: 1rem;
+    height: 60px;
 }
 
 
 
-
-
-
-
+@import "media";
 
 
 
