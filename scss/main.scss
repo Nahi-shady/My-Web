@@ -48,15 +48,23 @@ header {
     z-index: 2;
     width: 100%;
 }
-
+.primary-color {
+    color: $primary-color;
+}
 .secondary-color {
     color: $secondary-color;
 }
+.ternary-color {
+    color: $ternary-color;
+}
+
 .fl {
     font-size: 1.5rem;
     color: $ternary-color;
     border-bottom: solid 1px $secondary-color;
 }
+
+//main
 main {
     padding: 4rem;
     min-height: calc(100vh - 60px);
@@ -192,6 +200,28 @@ main {
     }
 }
 
+// contact me
+.boxes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
+
+    div {
+        font-size: 1.5rem;
+        border: 3px solid $secondary-color;
+        padding: 1.1rem 1.5rem;
+        margin-bottom: 3rem;
+        background-color: rgba(14, 13, 11, 0.356);
+        @include easeOut;
+
+        &:hover {
+            background-color: rgba(36, 33, 30, 0.733);
+        }
+    }
+}
+
 // button 
 
 .btns {
@@ -218,7 +248,6 @@ main {
 .btn-brown {
     @extend .btns;
 }
-
 
 
 
