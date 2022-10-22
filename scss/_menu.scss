@@ -20,7 +20,7 @@
     &.close {
         transform: rotate(180deg);
         .btn-line {
-            background-color: rgb(57, 245, 141);
+            background-color: rgb(253, 253, 253);
             &:nth-child(1){
             transform: rotate(45deg) translate(9px, 4px);
             }
@@ -29,7 +29,7 @@
                 margin-left: 25px;
                 border-radius: 20px;
                 height: 5px;
-                background-color: rgb(235, 231, 34);
+                background-color: rgb(140, 234, 247);
             }
             &:nth-child(3){
                 transform: rotate(-45deg) translate(8px, -3px);
@@ -70,7 +70,7 @@
         padding: 0;
         background: darken($primary-color, 20);
         list-style: none;
-        transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, 100%, 0);
         @include easeOut;
 
         &.show {
@@ -81,7 +81,7 @@
     &-branding {
         opacity: 1;
         background: darken($primary-color, 20);
-        transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, -100%, 0);
         @include easeOut;
 
         &.show {
@@ -115,7 +115,7 @@
         color: white;
         position: relative;
         text-decoration: none;
-        margin-bottom: 3px;
+        margin-bottom: 12px;
         padding: 0;
         font-size: 25px;
         font-weight: 600;
@@ -123,8 +123,15 @@
         @include easeIn;
 
         &:hover {
-            color: rgb(47, 233, 233);
-            margin-left: 13px;
+            color: rgb(211, 243, 243);
+            margin-left: 9px;
+            margin-top: 9px;
+            padding: 6px;
+            border-radius: 15%;
+            border: solid 2px #05ffff;
+            background-color: rgb(0, 0, 0);
+            
+            
         } 
     }
 }

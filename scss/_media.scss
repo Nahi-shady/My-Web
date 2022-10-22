@@ -10,7 +10,7 @@
     }
     .menu-nav {
         height: 70vh;
-        transform: translate3d(100%, 0, 0);
+        transform: translate3d(0, 100%, 0);
         .nav-link {
             font-size: 20px;
         }
@@ -18,10 +18,10 @@
     }
     .menu-branding {
         height: 30vh;
-        transform: translate3d(-100%, 0, 0);
+        transform: translate3d(0, -100%, 0);
         .portrait {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             background: $small-menu-image;
             background-size: cover;
         }
@@ -34,15 +34,58 @@
             margin: 0;
             font-weight: 450;
             &.lg-heading{
-                font-size: 1rem;
+                font-size: 2.5rem;
             }
             &.sm-heading{
-                font-size: 0.3rem;
+                font-size: 1.4rem;
                 
             }
         }
     }
 
+    //about me
+    .about-info {
+        grid-template-areas:
+        'bio-image' 
+        'bio-image'
+        'bio' 
+        'job-1' 
+        'job-2' 
+        'job-3';
+        grid-template-columns: 1fr;
+        padding: 10px 7px 7px 10px;
+        font-size: 1.1rem;
+        img {
+            max-width: 50%;
+            height: auto;
+          }
+        h1,
+        h2,
+        h3{
+            margin: 0;
+        }
+        .bio h1 {
+            font-size: 1.7rem;
+        }
+        
+    }
+
+    // code skill
+    #coding-skill .skills-info {
+        grid-template-columns: 1fr;
+    }
+    .career {
+        grid-template-columns: 1fr;
+        img {
+            width: 80%;
+            &:hover {
+                width: 70%;
+            }
+        }
+    }
+    .btns{
+        width: 80%;
+    }
 }
 @include mediaMd {
     main {
@@ -81,15 +124,15 @@
         margin-top: 20vh;
     }
 
+    // about me
     .about-info {
         grid-template-areas:
-        'bio-image'
-        'bio'
-        'job-1' 
-        'job-2 '
-        'job-3';
-        grid-template-columns: repeat(1, 1fr);
-        
+        'bio-image bio-image'
+        'bio job-1' 
+        'job-2 job-3';
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 7px 7px 10px;
+        font-size: 1.1rem;
         img {
             max-width: 50%;
             height: auto;
@@ -99,18 +142,29 @@
         h3{
             margin: 0;
         }
-        .bio {
-            padding: 10px 7px 7px 10px;
-            font-size: 1.2rem;
-        }
         .bio h1 {
-            font-size: 1.9rem;
+            font-size: 1.7rem;
         }
+        
+    }
+    // code skill
+    #coding-skill .skills-info {
+        grid-template-columns: 1fr;
+    }
+    .career {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        img {
+            width: 80%;
+            &:hover {
+                width: 70%;
+            }
+        }
+    }
+    .btns{
+        width: 80%;
     }
 }
 @include mediaLg {
-
-}
-@include mediaXl {
 
 }

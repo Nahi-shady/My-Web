@@ -5,8 +5,9 @@
 
 * {
     box-sizing: border-box;
-    
+
 }
+
 body {
     @include background;
     background: $primary-color;
@@ -15,20 +16,25 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
-    //overflow: hidden;
 }
 
 // headings
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     margin: 0;
     font-weight: 400;
-    &.lg-heading{
+
+    &.lg-heading {
         font-size: 4rem;
     }
-    &.sm-heading{
+
+    &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
         background: rgba(lighten($primary-color, 2), 0.5);
+        
     }
 }
 
@@ -46,34 +52,44 @@ header {
 .secondary-color {
     color: $secondary-color;
 }
-
+.fl {
+    font-size: 1.5rem;
+    color: $ternary-color;
+    border-bottom: solid 1px $secondary-color;
+}
 main {
     padding: 4rem;
     min-height: calc(100vh - 60px);
+
     .icons {
         margin-top: 1rem;
+
         a {
             padding: 0.4rem;
-            &:hover{
+
+            &:hover {
                 color: $secondary-color;
                 @include easeOut();
             }
         }
     }
+
     &#home {
         overflow: hidden;
+
         h1 {
             margin-top: 20vh;
         }
     }
-    .line{
+
+    .line {
         float: left;
         width: 150px;
         height: 2px;
         border-radius: 49px;
-        margin: 0 ;
+        margin: 0;
         background-color: rgb(20, 173, 220);
-    }    
+    }
 }
 
 // about page
@@ -81,16 +97,21 @@ main {
     display: grid;
     gap: 15px;
     grid-template-areas:
-    'bio-image bio bio'
-    'job-1 job-2 job-3';
+        'bio-image bio bio'
+        'job-1 job-2 job-3';
     grid-template-columns: repeat(3, 1fr);
+    font-size: 1.2rem;
+    font-size: 1.2rem;
+
     p {
         margin-top: 5px;
     }
+
     img {
         max-width: 100%;
         height: auto;
-      }
+    }
+
     .bio-image {
         grid-area: bio-image;
         margin: auto;
@@ -103,41 +124,106 @@ main {
         grid-area: bio;
         border-radius: 3%;
         padding: 20px 9px 9px 20px;
-        font-size: 1.2rem;
         border: solid 2px lavender;
         box-shadow: 0 0 5px 1px #05ffff;
+        background-color: rgba(lighten($primary-color, 2), 0.9);
     }
 
     .job-1 {
         grid-area: job-1;
         padding: 10px 9px 9px 15px;
-        background-color: rgb(51, 50, 50);
-        font-size: 1.2rem;
+        background-color: rgba(51, 50, 50, 0.9);
         border-radius: 9px;
         border-left: solid 3px $secondary-color;
         border-bottom: solid 6px $secondary-color;
     }
+
     .job-2 {
         grid-area: job-2;
         padding: 10px 9px 9px 15px;
-        background-color: rgb(51, 50, 50);
-        font-size: 1.2rem;
+        background-color: rgba(51, 50, 50, 0.9);
         border-radius: 9px;
         border-left: solid 3px $secondary-color;
         border-bottom: solid 6px $secondary-color;
-        
+
     }
+
     .job-3 {
         grid-area: job-3;
         padding: 10px 9px 9px 15px;
-        background-color: rgb(51, 50, 50);
-        font-size: 1.2rem;
+        background-color: rgba(51, 50, 50, 0.9);
         border-radius: 9px;
         border-left: solid 3px $secondary-color;
         border-bottom: solid 6px $secondary-color;
-        
+
     }
 }
+
+//code skills
+#coding-skill {
+    background-color: rgba(lighten($primary-color, 2), 0.9);
+}
+#coding-skill .skills-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    p {
+        border-left: solid 3px $secondary-color;
+        padding-left: 15px;
+        background-color: rgba(darken($primary-color, 6), 0.9);
+    }
+}
+
+.career {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    img {
+        width: 100%;
+        border: solid 2px white;
+        border-radius: 5%;
+        @include easeIn;
+        &:hover {
+            width: 90%;
+            border: solid 2px $secondary-color;
+            border-radius: 20%;
+        }
+
+    }
+}
+
+// button 
+
+.btns {
+    display: block;
+    padding: 0.3rem 1rem;
+    border: 0;
+    margin-bottom: 2px;
+    width: 100%;
+    background-color: #000000;
+    &:hover {
+        background-color: rgba(51, 50, 50, 0.9);
+        border-radius: 5%;
+        padding: 0.5rem 1rem;
+   }
+}
+
+.btn-light {
+    @extend .btns;
+    
+}
+.btn-dark {
+    @extend .btns;
+}
+.btn-brown {
+    @extend .btns;
+}
+
+
+
+
+
+
 
 // footer 
 footer {
@@ -150,6 +236,3 @@ footer {
 
 
 @import "media";
-
-
-
